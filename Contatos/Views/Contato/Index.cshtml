@@ -7,8 +7,8 @@
 
 
 
-<div>
-    <a class="btn btn-primary" role ="button">Adicionar novo Contato</a>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-primary" role ="button" asp-controle ="Contato" asp-action="Criar">Adicionar novo Contato</a>
 </div>
 
 <table class="table">
@@ -29,8 +29,8 @@
       <td>1785479855</td>
       <td>
           <div class="btn-group" role="group" aria-label="Basic example">
-             <a role="button"   class="btn btn-primary">Editar</a> 
-             <a role="button"   class="btn btn-danger">Excluir</a>
+             <a role="button"   class="btn btn-primary" asp-controller="Contato" asp-action="Editar">Editar</a> 
+             <a role="button"   class="btn btn-danger" asp-controller="Contato" asp-action="Excluir">Excluir</a>
             
             </div>
 
@@ -44,8 +44,8 @@
       <td>7845112547</td>
            <td>
           <div class="btn-group" role="group" aria-label="Basic example">
-         <a role="button"   class="btn btn-primary">Editar</a> 
-         <a role="button"   class="btn btn-danger">Excluir</a>
+         <a role="button"   class="btn btn-primary" asp-controller="Contato" asp-action="Editar">Editar</a> 
+         <a role="button"   class="btn btn-danger" asp-controller="Contato" asp-action="Excluir">Excluir</a>
         
              </div>
 
@@ -59,8 +59,8 @@
       <td>1578448775</td>
            <td>
           <div class="btn-group" role="group" aria-label="Basic example">
-         <a role="button"   class="btn btn-primary">Editar</a> 
-         <a role="button"   class="btn btn-danger">Excluir</a>
+         <a role="button"   class="btn btn-primary"  asp-controller="Contato" asp-action="Editar">Editar</a> 
+         <a role="button"   class="btn btn-danger" asp-controller="Contato" asp-action="Excluir">Excluir</a>
              </td>
 
 

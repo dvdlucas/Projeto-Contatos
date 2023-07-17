@@ -1,0 +1,31 @@
+﻿@{
+    
+}
+<div class="text-center">
+
+<h1 class="display-4">Cadastrar Contato</h1>
+
+</div>
+
+
+<form>
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" placeholder="Digite o nome">
+  </div>
+
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" placeholder="Digite o email">
+  </div>
+
+    <div class="form-group">
+    <label for="Telefone">Telefone</label>
+    <input type="tel" class="form-control" placeholder="Digite o telefone">
+  </div>
+ 
+
+  <button type="submit" class="btn btn-primary btn-lg btn-block">Adicionar</button>
+  <a class="btn btn-secondary btn-lg btn-block" asp-controller="Contato" asp-action="Index" role="button">Voltar</a>
+</form>
