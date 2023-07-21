@@ -17,20 +17,38 @@ namespace Contatos.Controllers
             return View(contatos);
         }
 
-        public IActionResult Editar() 
+        public IActionResult Editar(int id) 
         { 
-            return View();
+            ContatoModel contato = _contatoRepository.ListarPorId(id);
+            return View(contato);
         }
 
-        public IActionResult Criar() 
+        public IActionResult Criar()
         {
             return View();
         }
-
-        public IActionResult Excluir() 
-        { 
-            return View();
+        
+        public IActionResult Excluir(int id) 
+            {
+            ContatoModel contato = _contatoRepository.ListarPorId(id);
+            return View(contato);
         }
+
+    
+
+        public IActionResult Apagar(int id)
+        {
+            _contatoRepository.Remover(id);
+            return RedirectToAction("Index");
+        }
+
+
+      
+        
+
+
+
+
         [HttpPost]
         public IActionResult Criar(ContatoModel contato)
         {
@@ -38,7 +56,12 @@ namespace Contatos.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [HttpPost]
+        public IActionResult Editar(ContatoModel contato)
+        {
+            _contatoRepository.Editar(contato);
+            return RedirectToAction("Index");
+        }
 
     }
 }
