@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<ContatoModel>
+
+@{
     ViewData["Title"] = "Lista de Contatos";
 }
 <div class="text-center">
@@ -7,8 +9,8 @@
 
 
 
-<div>
-    <a class="btn btn-primary" role ="button">Adicionar novo Contato</a>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-primary" role ="button" asp-controller="Contato" asp-action="Criar">Adicionar novo Contato</a>
 </div>
 
 <table class="table">
@@ -22,49 +24,28 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto@gmail.com</td>
-      <td>1785479855</td>
+            @if(Model != null && Model.Any())
+            {
+                foreach(ContatoModel contato in Model)
+                {
+                        <tr>
+      <th scope="row">@contato.Id</th>
+      <td>@contato.Nome</td>
+      <td>@contato.Email</td>
+      <td>@contato.Telefone</td>
       <td>
           <div class="btn-group" role="group" aria-label="Basic example">
-             <a role="button"   class="btn btn-primary">Editar</a> 
-             <a role="button"   class="btn btn-danger">Excluir</a>
+             <a role="button"   class="btn btn-primary"asp-route-id="@contato.Id"  asp-controller="Contato" asp-action="Editar">Editar</a> 
+             <a role="button"   class="btn btn-danger"asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Excluir">Excluir</a>
             
             </div>
 
       </td>
 
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton@gmail.com</td>
-      <td>7845112547</td>
-           <td>
-          <div class="btn-group" role="group" aria-label="Basic example">
-         <a role="button"   class="btn btn-primary">Editar</a> 
-         <a role="button"   class="btn btn-danger">Excluir</a>
-        
-             </div>
+                }
+            }
 
-      </td>
-
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>Larry gmail.com</td>
-      <td>1578448775</td>
-           <td>
-          <div class="btn-group" role="group" aria-label="Basic example">
-         <a role="button"   class="btn btn-primary">Editar</a> 
-         <a role="button"   class="btn btn-danger">Excluir</a>
-             </td>
-
-
-    </tr>
   </tbody>
 </table>
 </div>
