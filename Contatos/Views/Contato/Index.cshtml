@@ -10,6 +10,8 @@
 
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-primary" role ="button" asp-controle ="Contato" asp-action="Criar">Adicionar novo Contato</a>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
     <a class="btn btn-primary" role ="button" asp-controller="Contato" asp-action="Criar">Adicionar novo Contato</a>
 </div>
 
@@ -35,6 +37,8 @@
       <td>@contato.Telefone</td>
       <td>
           <div class="btn-group" role="group" aria-label="Basic example">
+             <a role="button"   class="btn btn-primary" asp-controller="Contato" asp-action="Editar">Editar</a> 
+             <a role="button"   class="btn btn-danger" asp-controller="Contato" asp-action="Excluir">Excluir</a>
              <a role="button"   class="btn btn-primary"asp-route-id="@contato.Id"  asp-controller="Contato" asp-action="Editar">Editar</a> 
              <a role="button"   class="btn btn-danger"asp-route-id="@contato.Id" asp-controller="Contato" asp-action="Excluir">Excluir</a>
             
@@ -43,6 +47,32 @@
       </td>
 
     </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton@gmail.com</td>
+      <td>7845112547</td>
+           <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+         <a role="button"   class="btn btn-primary" asp-controller="Contato" asp-action="Editar">Editar</a> 
+         <a role="button"   class="btn btn-danger" asp-controller="Contato" asp-action="Excluir">Excluir</a>
+        
+             </div>
+
+      </td>
+
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>Larry gmail.com</td>
+      <td>1578448775</td>
+           <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+         <a role="button"   class="btn btn-primary"  asp-controller="Contato" asp-action="Editar">Editar</a> 
+         <a role="button"   class="btn btn-danger" asp-controller="Contato" asp-action="Excluir">Excluir</a>
+             </td>
+
                 }
             }
 
