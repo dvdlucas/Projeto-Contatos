@@ -104,7 +104,7 @@ namespace Contatos.Controllers
             }
             catch (Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, algo não saiu como o planeejado, não conseguimos atualizar o contato, Tente novamente {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, algo não saiu como o planejado, não conseguimos atualizar o contato, Tente novamente {erro.Message}";
                 return RedirectToAction("Index");
             }
 

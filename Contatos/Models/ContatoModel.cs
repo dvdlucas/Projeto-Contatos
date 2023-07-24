@@ -14,13 +14,13 @@ namespace Contatos.Models
         public string Nome { get; set; }
         [Column("Email", TypeName = "varchar(200)")]
 
-        [Required(ErrorMessage ="Digite o email do contato !!!")]
-        [EmailAddress(ErrorMessage ="o email informado não é válido !!!")]
+        [Required(ErrorMessage ="Digite o email do contato!!!")]
+        [EmailAddress(ErrorMessage ="Digite um email válido")]
         public string Email { get; set; }
         [Column("Telefone", TypeName = "varchar(200)")]
 
-        [Required (ErrorMessage ="Digite o telefone do contato !!!")]
-        [Phone(ErrorMessage ="O Telefone informado não é válido !!!")]
+        [Required(ErrorMessage ="Digite o telefone")]
+        [Phone(ErrorMessage ="Digite um telefone válido")]
         public string Telefone { get; set; }
 
     }
