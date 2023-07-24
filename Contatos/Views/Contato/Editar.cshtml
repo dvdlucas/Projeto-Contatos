@@ -18,18 +18,21 @@
 <div class = "form-group">
     <label for="nome">Nome</label>
     <input type ="text" asp-for ="Nome" class="form-control" placeholder="Digite o nome" />
+     @Html.ValidationMessageFor(x => x.Nome)
 
   </div>
 
     <div class="form-group">
     <label form="email">Email</label>
     <input type ="email" asp-for ="Email" class="form-control" placeholder="Digite o email" />
+     @Html.ValidationMessageFor(x => x.Email)
 
   </div>
 
     <div class="form-group">
     <label form="Telefone">Telefone</label>
      <input type ="tel" asp-for ="Telefone"  class="form-control" placeholder="Digite o telefone" />
+      @Html.ValidationMessageFor(x => x.Telefone)
   </div>
  
 
@@ -37,6 +40,5 @@
 <button type ="submit" class="btn btn-primary w-100">Editar</button>
 <a type ="submit" class="btn btn-secondary w-100" asp-controle ="Contato" asp-action="Index" role="button">Voltar</a>
 
-  <button type="submit" class="btn btn-primary btn-lg btn-block">Editar</button>
-  <a class="btn btn-secondary btn-lg btn-block" asp-controller="Contato" asp-action="Index" role="button">Voltar</a>
+  
 </form>
