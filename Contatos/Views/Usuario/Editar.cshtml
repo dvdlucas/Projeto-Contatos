@@ -1,0 +1,45 @@
+﻿
+@model UsuarioModel;
+    
+@{
+    ViewData["Title"] = "Editar Usuarios";
+}
+
+<div class="text-center">
+
+<h1 class="display-4">Editar Usuário</h1>
+
+</div>
+
+
+<form asp-controller="Usuario" asp-action="Editar" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+
+<div class = "form-group">
+    <label for="nome">Nome</label>
+    <input type ="text" asp-for ="Nome" class="form-control" placeholder="Digite o nome" />
+     @Html.ValidationMessageFor(x => x.Nome)
+
+  </div>
+
+    <div class="form-group">
+    <label form="email">Email</label>
+    <input type ="email" asp-for ="Email" class="form-control" placeholder="Digite o email" />
+     @Html.ValidationMessageFor(x => x.Email)
+
+  </div>
+
+    <div class="form-group">
+    <label form="Login">Login</label>
+     <input type ="tel" asp-for ="Login"  class="form-control" placeholder="Digite o Login" />
+      @Html.ValidationMessageFor(x => x.Login)
+  </div>
+ 
+
+
+<button type ="submit" class="btn btn-primary w-100">Editar</button>
+<a type ="submit" class="btn btn-secondary w-100" asp-controle ="Usuario" asp-action="Index" role="button">Voltar</a>
+
+  
+</form>
