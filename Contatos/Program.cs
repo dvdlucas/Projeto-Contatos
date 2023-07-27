@@ -12,7 +12,7 @@ var provider = builder.Services.BuildServiceProvider();
 var configuration = provider.GetRequiredService<IConfiguration>();
 builder.Services.AddDbContext<BancoContext>(item => item.UseSqlServer(configuration.GetConnectionString("DataBase")));
 builder.Services.AddScoped<IContatoRepository, ContatoRepository>();
-
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
   
 var app = builder.Build();
 
