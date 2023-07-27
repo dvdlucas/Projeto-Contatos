@@ -2,11 +2,10 @@
 
 namespace Contatos.Repository
 {
-    public class IContatoRepository
-    {
-        public interface IContatoRespository
+ 
+        public interface IContatoRepository
         {
-            ContatoModel ListaPorId(int id);
+            ContatoModel ListarPorId(int id);
 
             List<ContatoModel> BuscarTodos();
             ContatoModel Adicionar(ContatoModel contato);
@@ -17,4 +16,4 @@ namespace Contatos.Repository
         }
 
     }
-}
+
