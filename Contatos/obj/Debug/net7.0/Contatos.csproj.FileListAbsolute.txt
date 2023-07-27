@@ -73,3 +73,4 @@ C:\Users\Ti-Docknox\Desktop\Curso C#\Contatos\Contatos\bin\Debug\net7.0\runtimes
 C:\Users\Ti-Docknox\Desktop\Curso C#\Contatos\Contatos\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Ti-Docknox\Desktop\Curso C#\Contatos\Contatos\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\Ti-Docknox\Desktop\Curso C#\Contatos\Contatos\obj\Debug\net7.0\Contatos.csproj.CopyComplete
+C:\Users\Ti-Docknox\Desktop\Curso C#\Contatos\Contatos\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout _Deslog.cshtml.rz.scp.css
