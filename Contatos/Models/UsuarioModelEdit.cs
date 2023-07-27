@@ -6,12 +6,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Contatos.Models
 {
-    public class UsuarioModel
+    public class UsuarioModelEdit
     {
-        
+
         public int Id { get; set; }
 
-    
+
         [Required(ErrorMessage = "Digite o nome do contato!!!")]
         public string Nome { get; set; }
 
@@ -19,19 +19,14 @@ namespace Contatos.Models
         public string Login { get; set; }
 
 
-    
+
         [Required(ErrorMessage = "Digite o email do contato!!!")]
         [EmailAddress(ErrorMessage = "Digite um email válido")]
         public string Email { get; set; }
 
-
-        [Required(ErrorMessage = "Informe o Perfil do Usuario")]
+        [Required(ErrorMessage ="Informe o Perfil do Usuario")]
         public PerfilEnum? Perfil { get; set; }
-
-        [Required(ErrorMessage ="Digite a senha do usuário")]
-        public string Senha { get; set; }
-        
-        public DateTime DataCadastro { get; set; }
         public DateTime? DataAtualizacao { get; set; }
     }
 }
+

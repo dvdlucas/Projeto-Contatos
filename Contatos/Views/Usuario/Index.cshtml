@@ -37,6 +37,8 @@
               <th scope="col">Login</th>
               <th scope="col">Email</th>
               <th scope="col">Data Cadastro</th>
+              <th scope="col">Perfil</th>
+              <th scope="col">Data Ultima Atualização</th>
               <th scope="col"></th>
           </tr>
         </thead>
@@ -50,7 +52,10 @@
                         <td>@usuario.Login</td>
                         <td>@usuario.Email</td>
                         <td>@usuario.DataCadastro</td>
-                       <td>
+                        <td>@usuario.Perfil</td>
+                        <td>@usuario.DataAtualizacao</td>
+                        
+                        <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
                          
                           <a role="button"   class="btn btn-primary"asp-route-id="@usuario.Id"  asp-controller="Usuario" asp-action="Editar">Editar</a> 

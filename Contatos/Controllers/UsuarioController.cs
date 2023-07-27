@@ -92,13 +92,24 @@ namespace Contatos.Controllers
 
 
         [HttpPost]
-        public IActionResult Editar(UsuarioModel usuario)
+        public IActionResult Editar(UsuarioModelEdit usuarioED)
         {
             try
             {
+                UsuarioModel usuario = null;
+
                 if (ModelState.IsValid)
                 {
-                    _usuarioRepository.Editar(usuario);
+                    usuario = new UsuarioModel()
+                    {
+                        Id = usuarioED.Id,
+                        Nome = usuarioED.Nome,
+                        Login = usuarioED.Login,
+                        Email = usuarioED.Email,
+                        Perfil = usuarioED.Perfil
+                    };
+
+                   usuario = _usuarioRepository.Editar(usuario);
                     TempData["MensagemSucesso"] = "Usuario atualizado com sucesso";
                     return RedirectToAction("Index");
                 }
@@ -106,7 +117,7 @@ namespace Contatos.Controllers
             }
             catch (Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, algo não saiu como o planejado, não conseguimos atualizar o contato, Tente novamente {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, algo não saiu como o planejado, não conseguimos atualizar o usuario, Tente novamente {erro.Message}";
                 return RedirectToAction("Index");
             }
         

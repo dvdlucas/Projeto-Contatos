@@ -49,7 +49,7 @@ namespace Contatos.Repository
             usuarioDB.Nome = usuario.Nome;
             usuarioDB.Email = usuario.Email;
             usuarioDB.Login = usuario.Login;
-            usuarioDB.DataAtualizacao = usuario.DataAtualizacao;
+            usuarioDB.DataAtualizacao = DateTime.Now;
             usuarioDB.Perfil = usuario.Perfil;
 
             _bancoContext.Update(usuarioDB);

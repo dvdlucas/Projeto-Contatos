@@ -1,8 +1,8 @@
-﻿
+﻿@using Contatos.Enums;
 @model UsuarioModel;
-    
+
 @{
-    ViewData["Title"] = "Editar Usuarios";
+    ViewData["Title"] = "Editar Usuários";
 }
 
 <div class="text-center">
@@ -32,8 +32,19 @@
 
     <div class="form-group">
     <label form="Login">Login</label>
-     <input type ="tel" asp-for ="Login"  class="form-control" placeholder="Digite o Login" />
+     <input type ="text" asp-for ="Login"  class="form-control" placeholder="Digite o telefone" />
       @Html.ValidationMessageFor(x => x.Login)
+  </div>
+
+          <div class="form-group">
+    <label form="Perfil">Perfil</label>
+    <select asp-for="Perfil" class="form-control">
+          <option value="">Selecione</option>
+          <option value="@PerfilEnum.Admin">Administrador</option>
+          <option value="@PerfilEnum.Padrao">Padrão</option>
+      </select>
+
+       @Html.ValidationMessageFor(x => x.Perfil)
   </div>
  
 
