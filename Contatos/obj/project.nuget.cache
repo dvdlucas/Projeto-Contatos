@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iINGJM+BK/qd9CoE38jHy1N5NtwBje0KFRZAiOfkhv61RO2PjS3vhzz7ma+k4ZGXp5sS04l0L5aUAdFrGoK1zg==",
+  "dgSpecHash": "6t2UA1VgLgQXouiJbmR4RoO+bfFva27PSDh046iIZxuUtZFppqgOqG7QqlWt2F6rsGHETKIidLbpDPT4iJaiCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ti-Docknox\\Desktop\\Curso C#\\Contatos\\Contatos\\Contatos.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,7 @@
     "C:\\Users\\Ti-Docknox\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Ti-Docknox\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Ti-Docknox\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Ti-Docknox\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Ti-Docknox\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Ti-Docknox\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\Ti-Docknox\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

@@ -65,6 +65,12 @@ namespace Contatos.Repository
         }
 
 
+        public UsuarioModel BuscarPorLogin(string login)
+        {
+            return _bancoContext.Usuarios.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+        }
+
+      
     }
 }
 

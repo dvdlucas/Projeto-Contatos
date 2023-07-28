@@ -3,11 +3,14 @@ using System.Collections.Generic;
 
 namespace Contatos.Repository
 {
-    public class IUsuarioRepository
-    {
-        public interface IContatoRespository
+     
+
+        public interface IUsuarioRepository
         {
-            UsuarioModel ListaPorId(int id);
+
+            UsuarioModel BuscarPorLogin(string login);
+
+            UsuarioModel ListarPorId(int id);
 
             List<UsuarioModel> BuscarTodos();
             UsuarioModel Adicionar(UsuarioModel usuario);
@@ -17,4 +20,4 @@ namespace Contatos.Repository
             bool Remover(int id);
         }
     }
-}
+
