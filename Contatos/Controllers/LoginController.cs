@@ -1,4 +1,5 @@
-﻿using Contatos.Models;
+﻿using Contatos.Helper;
+using Contatos.Models;
 using Contatos.Repository;
 using Microsoft.AspNetCore.Mvc;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -8,18 +9,34 @@ namespace Contatos.Controllers
     public class LoginController : Controller
     {
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly ISessao _sessao;
 
-        public LoginController(IUsuarioRepository usuarioRepository)
+        public LoginController(IUsuarioRepository usuarioRepository, ISessao sessao)
         {
             _usuarioRepository = usuarioRepository;
+            _sessao = sessao;
         }
 
 
 
         public IActionResult Index()
         {
+            //se usuario estiver logado, redirecionar par o home
+
+            if(_sessao.BuscarSessao() != null) return RedirectToAction("Index", "Home");
             return View();
         }
+
+        public IActionResult Sair()
+        {
+            _sessao.RemoverSessao(_sessao.BuscarSessao());
+
+            return RedirectToAction("Index", "Login");
+        }
+
+
+
+
 
         [HttpPost]
 
@@ -35,6 +52,7 @@ namespace Contatos.Controllers
                     {
                         if (usuario.SenhaValida(loginModel.Senha))
                         {
+                            _sessao.CriarSessao(usuario);
                             return RedirectToAction("Index", "Home");
                         }
                         TempData["MensagemErro"] = $"Senha do usuário inválida(s). Por Favor, tente novamente !!!";
