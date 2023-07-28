@@ -1,4 +1,5 @@
-﻿using Contatos.Models;
+﻿using Contatos.Filters;
+using Contatos.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,7 +7,7 @@ namespace Contatos.Controllers
 {
     public class HomeController : Controller
     {
-     
+       [PaginaParaUsuarioLogado]
 
         public IActionResult Index()
         {
