@@ -1,4 +1,5 @@
 ﻿using Contatos.Enums;
+using Contatos.Helper;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -36,7 +37,12 @@ namespace Contatos.Models
 
         public bool SenhaValida(string senha)
         {
-            return Senha == senha;
+            return Senha == senha.GerarHash();
+        }
+
+        public void setSenhaHash()
+        {
+            Senha = Senha.GerarHash();
         }
     }
 }
