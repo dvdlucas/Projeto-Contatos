@@ -10,7 +10,9 @@ namespace Contatos.Repository
 
             UsuarioModel BuscarPorLogin(string login);
 
-            UsuarioModel ListarPorId(int id);
+           UsuarioModel BuscarPorEmailLogin(string email, string login);
+
+        UsuarioModel ListarPorId(int id);
 
             List<UsuarioModel> BuscarTodos();
             UsuarioModel Adicionar(UsuarioModel usuario);

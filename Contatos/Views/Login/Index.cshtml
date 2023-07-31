@@ -11,7 +11,16 @@
             @TempData["MensagemErro"]
         </div>
     }
+      @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
 
+
+    <h1 class="text-center"> Login</h1>
 
 
 <form asp-controller="Login" asp-action="Entrar" method="post">
@@ -27,6 +36,8 @@
     @Html.ValidationMessageFor(x => x.Senha)
   </div>
 
+  
+  <p class="mb-4 text-sm-center mx-auto">Esqueceu a senha? <a asp-action="RedefinirSenha" asp-controller="Login" class="text-primary text-gradient font-weight-bold">Redefinir Senha</a></p>
 
 
 

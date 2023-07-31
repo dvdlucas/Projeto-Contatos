@@ -10,11 +10,13 @@ namespace Contatos.Controllers
     {
         private readonly IUsuarioRepository _usuarioRepository;
         private readonly ISessao _sessao;
+        private readonly IEmail _email;
 
-        public LoginController(IUsuarioRepository usuarioRepository, ISessao sessao)
+        public LoginController(IUsuarioRepository usuarioRepository, ISessao sessao, IEmail email)
         {
             _usuarioRepository = usuarioRepository;
             _sessao = sessao;
+            _email = email;
         }
 
 
@@ -33,6 +35,13 @@ namespace Contatos.Controllers
 
             return RedirectToAction("Index", "Login");
         }
+
+
+        public IActionResult RedefinirSenha()
+        {
+            return View();
+        }
+
 
 
 
@@ -71,6 +80,49 @@ namespace Contatos.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        [HttpPost]
+        public IActionResult EnviarLink(RedefinirSenhaModel redefinirSenhaModel)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    UsuarioModel usuario = _usuarioRepository.BuscarPorEmailLogin(redefinirSenhaModel.Email, redefinirSenhaModel.Login);
+
+                    if (usuario != null)
+                    {
+                        string novaSenha = usuario.GerarNovaSenha();
+                        string mensagem = $"Sua nova senha é : {novaSenha}";
+
+                      bool emailEnviado = _email.Enviar(usuario.Email, "Sistema de Contatos - Nova Senha",mensagem);
+                        if (emailEnviado)
+                        {
+                            _usuarioRepository.Editar(usuario);
+                            TempData["MensagemSucesso"] = $"Enviamos para o seu email cadastrado uma nova senha !";
+                        }
+                        else
+                        {
+                            TempData["MensagemErro"] = $"Não consuimos envial o email. Por Favor,verifique os dados informados e tente novamente!!!";
+                        }
+                        return RedirectToAction("Index","Login");
+                    }
+                    TempData["MensagemErro"] = $"Não conseguimos atualizar sua senha. Por Favor,verifique os dados informados e tente novamente !!!";
+
+
+
+                }
+                return View("RedefinirSenha");
+
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops,Não conseguimos atualizar sua Senha, Tente novamente !!! ,{erro.Message}";
+                return RedirectToAction("RedefinirSenha");
+            }
+        }
+
+
 
 
 
