@@ -10,6 +10,6 @@ namespace Contatos.Models
         [Required(ErrorMessage = "Digite a Senha !!!")]
         public string Senha { get; set; }
 
-
+        public int Id { get; set; }
     }
 }

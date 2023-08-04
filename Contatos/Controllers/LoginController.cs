@@ -103,7 +103,7 @@ namespace Contatos.Controllers
                         }
                         else
                         {
-                            TempData["MensagemErro"] = $"Não consuimos envial o email. Por Favor,verifique os dados informados e tente novamente!!!";
+                            TempData["MensagemErro"] = $"Não conseguimos envial o email. Por Favor,verifique os dados informados e tente novamente!!!";
                         }
                         return RedirectToAction("Index","Login");
                     }

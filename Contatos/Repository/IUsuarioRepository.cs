@@ -17,9 +17,13 @@ namespace Contatos.Repository
             List<UsuarioModel> BuscarTodos();
             UsuarioModel Adicionar(UsuarioModel usuario);
 
+           UsuarioModel AlterarSenha(AlterarSenhaModel alterarSenhaModel);
+
             UsuarioModel Editar(UsuarioModel usuario);
 
             bool Remover(int id);
+
+
         }
     }
 

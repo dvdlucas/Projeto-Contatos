@@ -23,5 +23,7 @@ namespace Contatos.Models
         [Phone(ErrorMessage ="Digite um telefone válido")]
         public string Telefone { get; set; }
 
+        public LoginModel LoginModel { get; set; }
+
     }
 }
